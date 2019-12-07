@@ -50,8 +50,15 @@ namespace SportsStore.Models
             .FirstOrDefault(p => p.ProductID == productID);
             if (dbEntry != null)
             {
-                context.Products.Remove(dbEntry);
-                context.SaveChanges();
+                try
+                {
+                    context.Products.Remove(dbEntry);
+                    context.SaveChanges();
+                }
+                catch(Exception e)
+                {
+                    return null;
+                }
             }
             return dbEntry;
         }

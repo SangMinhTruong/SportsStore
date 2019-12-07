@@ -26,67 +26,75 @@ namespace SportsStore.Models
                 context.Products.AddRange(
                 new Product
                 {
-                    Name = "Kayak",
-                    Description = "A boat for one person",
-                    Category = "Watersports",
-                    Price = 275
+                    Name = "Giày thể thao",
+                    Description = "Đôi giày thể thao mới.",
+                    Category = "Fashion",
+                    Price = 1000000m,
+                    ImportPrice = 700000m
                 },
                 new Product
                 {
-                    Name = "Lifejacket",
-                    Description = "Protective and fashionable",
-                    Category = "Watersports",
-                    Price = 48.95m
+                    Name = "Quần thể thao",
+                    Description = "Quần thể thao thoải mái khi tập thể dục.",
+                    Category = "Fashion",
+                    Price = 500000m,
+                    ImportPrice = 200000m
                 },
                 new Product
                 {
-                    Name = "Soccer Ball",
-                    Description = "FIFA-approved size and weight",
+                    Name = "Banh bóng đá",
+                    Description = "Trái banh để chơi đá bóng.",
                     Category = "Soccer",
-                    Price = 19.50m
+                    Price = 100000m,
+                    ImportPrice = 75000m
                 },
                 new Product
                 {
-                    Name = "Corner Flags",
-                    Description = "Give your playing field a professional touch",
-                    Category = "Soccer",
-                    Price = 34.95m
+                    Name = "Banh bóng rổ",
+                    Description = "Trái banh để chơi bóng rổ",
+                    Category = "Basketball",
+                    Price = 120000m,
+                    ImportPrice = 80000m
                 },
                 new Product
                 {
-                    Name = "Stadium",
-                    Description = "Flat-packed 35,000-seat stadium",
-                    Category = "Soccer",
-                    Price = 79500
+                    Name = "Tạ 5kg",
+                    Description = "Tạ 5kg dùng để tập thể hình.",
+                    Category = "Gym",
+                    Price = 50000m,
+                    ImportPrice = 30000m
                 },
                 new Product
                 {
-                    Name = "Thinking Cap",
-                    Description = "Improve brain efficiency by 75%",
-                    Category = "Chess",
-                    Price = 16
+                    Name = "Găng tay tập gym",
+                    Description = "Găng tay chống ma sát khi tập gym",
+                    Category = "Gym",
+                    Price = 50000m,
+                    ImportPrice = 20000m
                 },
                 new Product
                 {
-                    Name = "Unsteady Chair",
-                    Description = "Secretly give your opponent a disadvantage",
-                    Category = "Chess",
-                    Price = 29.95m
+                    Name = "Vành rổ sắt",
+                    Description = "Vành rổ bằng sắt để chơi bóng rổ.",
+                    Category = "Basketball",
+                    Price = 250000m,
+                    ImportPrice = 200000m
                 },
                 new Product
                 {
-                    Name = "Human Chess Board",
-                    Description = "A fun game for the family",
-                    Category = "Chess",
-                    Price = 75
+                    Name = "Ghế tập tạ",
+                    Description = "Ghế tập tạ chỉnh tư thế được.",
+                    Category = "Gym",
+                    Price = 1200000m,
+                    ImportPrice = 700000m
                 },
                 new Product
                 {
-                    Name = "Bling-Bling King",
-                    Description = "Gold-plated, diamond-studded King",
-                    Category = "Chess",
-                    Price = 1200
-
+                    Name = "Áo thể thao",
+                    Description = "Áo để mặc khi chơi thể thao.",
+                    Category = "Fashion",
+                    Price = 200000m,
+                    ImportPrice = 120000m
                 }
                 );
                 context.SaveChanges();

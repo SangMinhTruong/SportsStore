@@ -3,7 +3,7 @@
     Layout = "_AdminLayout";
 }
 <div class="position-relative text-center bg-light p-2 m-3">
-    <div class="display-4 p-3 m-5">
+    <div class="display-4 p-3 mb-4 mt-5">
         <h1 class="p-1">
             <strong class="font-weight-bolder">SportsStore</strong>
             <small class="font-weight-lighter">Admin</small>
@@ -11,6 +11,11 @@
         <p class="lead font-weight-normal">
             Welcome to Index page of SportsStore Admin section.
         </p>
+        <a class="btn btn-lg btn-success text-white font-weight-bold"
+           asp-controller="Report"
+           asp-action="IncomeReport">
+            Monthly Report
+        </a>
     </div>
 </div>
 <div class="container-fluid">

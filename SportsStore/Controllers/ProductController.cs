@@ -51,27 +51,33 @@ namespace SportsStore.Controllers
         //
         [Authorize]
         [HttpPost]
-        public IActionResult Edit(Product product)
+        public IActionResult Edit(ProductsEditViewModel viewModel)
         {
             //check validated
             if (ModelState.IsValid)
             {
                 //if yes Save product and return View Index action
-                repository.SaveProduct(product);
+                repository.SaveProduct(viewModel.Product);
                 // TempDaya similar to Session and Viewbag but it is temporary, persists until is read by View
                 //ViewBag only persists in the current HTTP request=>go to the new URL ViewBag will be lost
                 //Session persists until explicit removed
-                TempData["message"] = $"{product.Name} has been saved";
-                return RedirectToAction("Index");
+                TempData["message"] = $"{viewModel.Product.Name} has been saved";
+                string[] redirection = viewModel.ReturnUrl.Split("/");
+                return RedirectToAction(redirection[2], redirection[1]);
             }
             else
             {
                 // there is something wrong with the data values
-                return View(product);
+                return View(viewModel.Product);
             }
         }
         [Authorize]
-        public ViewResult Create() => View("Edit", new Product());
+        public ViewResult Create(string returnUrl) => View("Edit",
+            new ProductsEditViewModel()
+            {
+                Product = new Product(),
+                ReturnUrl = returnUrl
+            });
         [Authorize]
         [HttpPost]
         public IActionResult Delete(int productId)
@@ -81,7 +87,11 @@ namespace SportsStore.Controllers
             {
                 TempData["message"] = $"{deletedProduct.Name} was deleted";
             }
-            return RedirectToAction("Index");
+            else
+            {
+                TempData["error"] = $"Cannot delete product because it is in past orders.";
+            }
+            return RedirectToAction("AdminList");
         }
     }
 }

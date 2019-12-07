@@ -18,8 +18,9 @@
                     Add a new product if isn't already available.
                 </p>
                 <a asp-action="Create"
-                   asp-controller="Admin"
-                   class="btn btn-primary pull-right">Add Product</a>
+                   asp-controller="Product"
+                   class="btn btn-primary pull-right"
+                   asp-route-returnurl="@ViewContext.HttpContext.Request.PathAndQuery()">Add Product</a>
             </div>
         </div>
         <div class="row">
