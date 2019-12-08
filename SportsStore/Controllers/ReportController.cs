@@ -72,6 +72,7 @@ namespace SportsStore.Controllers
                     .Sum(o => o.Sum);
 
                 incomeReport.EmployeeSalaries = employeeRepo.Employees
+                    .Where(e => DateTime.Compare(e.JoinDate, reportDate) <= 0)
                     .Sum(e => e.Salary);
 
                 incomeReport.CalculateProfit();
