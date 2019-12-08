@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
 using System.Threading.Tasks;
 
@@ -10,5 +11,6 @@ namespace SportsStore.Models.ViewModels
     {
         public Cart Cart { get; set; }
         public string ReturnUrl { get; set; }
+        public static CultureInfo cul = CultureInfo.GetCultureInfo("vi-VN");
     }
 }
