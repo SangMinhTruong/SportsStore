@@ -46,8 +46,13 @@ namespace SportsStore.Controllers
         public ViewResult AdminList() => View(repository.Products);
         //View action for tag-helper asp-action="Edit"
         [Authorize]
-        public ViewResult Edit(int productId) => View(repository
-            .Products.FirstOrDefault(p => p.ProductID == productId));
+        public ViewResult Edit(int productId) => View(
+            new ProductsEditViewModel()
+            {
+                Product = repository
+                        .Products.FirstOrDefault(p => p.ProductID == productId),
+                ReturnUrl = "/Product/AdminList"
+            });
         //
         [Authorize]
         [HttpPost]
@@ -67,8 +72,9 @@ namespace SportsStore.Controllers
             }
             else
             {
+                TempData["error"] = $"There is something wrong with the data values.";
                 // there is something wrong with the data values
-                return View(viewModel.Product);
+                return View(viewModel);
             }
         }
         [Authorize]
