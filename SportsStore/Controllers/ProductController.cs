@@ -19,7 +19,7 @@ namespace SportsStore.Controllers
         // => View(repository.Products.OrderBy(p => p.ProductID)
         // .Skip((productPage - 1) * PageSize).Take(PageSize));
 
-        //Call the List.cshtl and passing Product+Paging Info
+        //Call the List.cshtml and passing Product+Paging Info
         public ViewResult List(string category, int productPage = 1)
         => View(new ProductsListViewModel
         {
